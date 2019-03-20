@@ -1,0 +1,83 @@
+html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Navbar */
+
+#navigation-list
+{
+    list-style-type: none;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width:100%;
+}
+
+#navigation-list > li
+{
+
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+}
+
+a.nav-link
+{
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    height: 100%;
+}
+
+#navigation-list>li:hover a.nav-link 
+{
+    color: white;
+}
+
+#navigation-list>li:hover
+{
+    background-color: black;
+}
+
+/* End CSS Navbar */
+
+div#presentation, div#hobbies
+{
+    text-align: center;
+    margin-bottom: -16px;
+    margin-top: -16px;
+}
+
+div#presentation
+{
+    background-color: beige;
+}
+div#hobbies
+{
+    background-color: azure;
+}
+
+div#hobbies_list
+{
+    width: 15%;
+    margin: auto;
+}
+div#hobbies ol
+{
+    margin: auto;
+}
+div#hobbies ol li
+{
+    list-style-type: upper-roman;
+    list-style-position: inside;
+    text-align: left;
+}
+
+p.differentP
+{
+    color: red;
+}
