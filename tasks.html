@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Web Homework &mdash; Task</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+    
+        <div>
+        
+        
+            <h3>DOM Task 4</h3>
+            
+            
+            <p>
+            
+                <span id="new_element">
+                  Here should appear our flower:
+	           </span>
+            
+            </p>
+            
+            <hr>
+            
+            <h3>DOM Task 5</h3>
+            
+            <div>
+                <span id="rainbow" style="font-size: 25px;">
+                    <span>Don't</span>
+                    <span>worry be</span>
+                    <span>H</span>
+                    <span>A</span>
+                    <span>P</span>
+                    <span>P</span>
+                    <span>Y</span>
+                </span>
+            </div>
+            
+            <hr>
+            
+            <div>
+            
+                <div id="event">
+                    
+                    <div>
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                    </div>
+                    <div>
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                    </div>
+                    <div>
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                    </div>
+                    <div>
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                    </div>
+                    <div>
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                        <img src="img/icons/flower1.png">
+                    </div>
+                    
+                </div>
+                
+            </div>
+        
+        
+        </div>
+    
+    </body>
+    
+    <!-- FontAwesome 5.7.2 CDN -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+    <!-- JQuery / ui CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script type="application/javascript">
+    
+        $(document).ready(function() {
+            
+            // DOM image generation + Jquery adding
+          
+            let image = document.createElement("img");
+            image.setAttribute("src", "img/icons/flower1.png");
+            image.setAttribute("height", "20");
+            image.setAttribute("width", "20");
+            image.setAttribute("alt", "Flower 1");
+            $('#new_element').append(image);
+            console.log('element added');
+
+            
+            // Generation of random coloring for DON'T WORRY BE HAPPY
+            
+            
+            let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+            let spans = document.querySelectorAll('span#rainbow span');// fill with proper code
+
+            for (var i = spans.length - 1; i >= 0; i--) {
+                
+                let r_color = colors[Math.floor(Math.random() * colors.length)];
+                spans[i].style.color = r_color; // fill with proper code
+            }
+            
+/*
+            //Jquery version
+            $("#rainbow").children().each(function() {
+                $(this).css("color", colors[Math.floor(Math.random() * colors.length)]);
+            });
+*/
+            
+            // Jquery flower management
+            
+            $("#event img").hover(function() {
+               $(this).attr("src", "img/icons/flower2.png");
+            }, function() {
+               $(this).attr("src", "img/icons/flower1.png");
+            });
+            
+        });
+    
+    </script>
+
+</html>

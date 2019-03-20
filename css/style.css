@@ -1,9 +1,26 @@
-html, body
+html
 {
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+body
+{
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    background-color: darkgray;
 }
 
+p, li
+{
+    color: dimgrey;
+}
+
+.div_centred
+{
+    text-align: center;
+}
 /* CSS Navbar */
 
 #navigation-list
@@ -47,7 +64,6 @@ a.nav-link
 
 div#presentation, div#hobbies
 {
-    text-align: center;
     margin-bottom: -16px;
     margin-top: -16px;
 }
@@ -61,16 +77,17 @@ div#hobbies
     background-color: azure;
 }
 
-div#hobbies_list
+div#climbing
+{
+    position: relative;
+}
+
+div#hobbies_list, div#top
 {
     width: 15%;
     margin: auto;
 }
-div#hobbies ol
-{
-    margin: auto;
-}
-div#hobbies ol li
+div#hobbies ol li, div#top ol li
 {
     list-style-type: upper-roman;
     list-style-position: inside;
@@ -80,4 +97,14 @@ div#hobbies ol li
 p.differentP
 {
     color: red;
+}
+
+#footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 1rem;
+    text-align: center;
 }

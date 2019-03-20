@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Web Homework &mdash; Shopping</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+    
+        <div id="content">
+        
+        
+            <form onsubmit="return false;">
+                
+                <label>Item to buy <input type="text" id="item_to_buy" value=""/></label>
+                <button id="add_button">Add</button>
+            </form>
+            
+            <ul id="list">
+            </ul>
+        
+        
+        </div>
+    
+    </body>
+    
+
+    <!-- FontAwesome 5.7.2 CDN -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+    <!-- JQuery / ui CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script type="application/javascript">
+    
+    
+        $(document).ready(function() {
+           
+           $("#add_button").click(function() {
+               
+
+               let text = document.createTextNode($("#item_to_buy").val());
+                              
+               if(text.length > 1)
+               {
+                   let li = document.createElement("li");
+
+                   li.append(text);
+                   $("#list").append(li);
+                   console.log("element added");
+               }
+               else
+               {
+                   $('#item_to_buy').val('').attr('placeholder', 'Empty Field !');
+                   
+                    console.log('empty field');
+                    
+               }
+           });
+            
+        });
+    
+    </script>
+
+</html>
