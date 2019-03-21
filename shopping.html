@@ -26,8 +26,13 @@
         
             <form onsubmit="return false;">
                 
+                <label><input type="checkbox" id="important"/> Is Important</label><br/>
+                <label><input type="checkbox" id="available_groceries"/> Can be bought in groceries</label><br/>
                 <label>Item to buy <input type="text" id="item_to_buy" value=""/></label>
                 <button id="add_button">Add</button>
+                
+                <label>Index of element to remove 1 - <span id="max_to_remove"></span> <input type="number" id="removeField" min="0" max="0"/></label>
+                <button id="remove_button">Remove</button>
             </form>
             
             <ul id="list">
@@ -49,20 +54,39 @@
     
     
         $(document).ready(function() {
+            
+            $("#max_to_remove").text(($('#list').children().length - 1 > 1) ? $('#list').children().length : '?');
            
            $("#add_button").click(function() {
                
 
                let text = document.createTextNode($("#item_to_buy").val());
                               
-               if(text.length > 1)
+               if(text.length > 0)
                {
                    let li = document.createElement("li");
 
                    li.append(text);
+                   
+                    if($("#important").is(':checked'))
+                    {
+                       li.style['color'] = 'red';
+                    }
+               
+                    if($("#available_groceries").is(':checked'))
+                    {
+                        li.style['text-decoration'] = 'underline';
+                    }
+                   
                    $("#list").append(li);
                     $("#item_to_buy").attr('placeholder', '');
                     $("#item_to_buy").val('');
+                   
+                   
+                   let max = ($('#list').children().length > 0) ? $('#list').children().length : '0';
+                    $("#max_to_remove").text (max);
+                    $("#removeField").attr('max', max);
+                                       
                    console.log("element added");
                }
                else
@@ -73,6 +97,31 @@
                     
                }
            });
+            
+            $("#remove_button").click(function() {
+               
+                let index = parseInt($('#removeField').val()) - 1;
+            
+                if(index > $('#list').children().length - 1)
+                {
+                   alert('Too hight number');
+                }
+                else if(index < 0)
+                {
+                    alert('To low number');
+                }
+                else
+                {
+                    $("#list").children().eq(index).remove();
+                    
+                   let max = ($('#list').children().length > 0) ? $('#list').children().length : '0';
+                    $("#max_to_remove").text (max);
+                    $("#removeField").attr('max', max);
+                    
+                    console.log('elemet removed');
+                }
+                
+            });
             
         });
     
