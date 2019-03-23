@@ -111,69 +111,23 @@
     
     <script type="application/javascript">
     
-        $(document).ready(function() {
-            
-            $("#reloadButton").click(function() {
-               colorText();
-                console.log('text colored');
-            });
-            
+        $(document).ready(function() {            
             
             createFlowerImage();
             colorText();
             changeImageOnHover();
             
-            function createFlowerImage ()
-            {
-                // DOM image generation + Jquery adding
-
-                let image = document.createElement("img");
-                
-                image.setAttribute("src", "img/icons/flower1.png");
-                image.setAttribute("height", "20");
-                image.setAttribute("width", "20");
-                image.setAttribute("alt", "Flower 1");
-                
-                $('#new_element').append(image);
-                
-                console.log('element added');
-            }
+            // Randomize color for DON'T WORRY BE HAPPY
+                                      
+            $("#reloadButton").click(function() {
+                colorText(1);
+                console.log('text colored');
+            });
             
-            // Generation of random coloring for DON'T WORRY BE HAPPY
-            
-            function colorText() 
-            {
-                let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
-                let spans = document.querySelectorAll('span#rainbow span');// fill with proper code
-
-                for (var i = spans.length - 1; i >= 0; i--) {
-
-                    let r_color = colors[Math.floor(Math.random() * colors.length)];
-                    spans[i].style.color = r_color; // fill with proper code
-                }
-
-                /*
-                    //Jquery version
-                    $("#rainbow").children().each(function() {
-                        $(this).css("color", colors[Math.floor(Math.random() * colors.length)]);
-                    });
-                */
-            }
-            
-            function changeImageOnHover() 
-            {
-            
-                // Jquery flower management
-            
-                $("#event img").hover(function() {
-                   $(this).attr("src", "img/icons/flower2.png");
-                }, function() {
-                   $(this).attr("src", "img/icons/flower1.png");
-                });
-            }
-                                                 
         });
     
     </script>
+    
+    <script src="js/task.js" type="application/javascript"></script>
 
 </html>

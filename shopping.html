@@ -52,59 +52,59 @@
 
     <script type="application/javascript">
     
-    
         $(document).ready(function() {
             
+            /* I decided to use of jquery function & selector here */
+            
             $("#max_to_remove").text(($('#list').children().length - 1 > 1) ? $('#list').children().length : '?');
-           
-           $("#add_button").click(function() {
-               
 
-               let text = document.createTextNode($("#item_to_buy").val());
-                              
-               if(text.length > 0)
-               {
-                   let li = document.createElement("li");
+            $("#add_button").click(function() {
 
-                   li.append(text);
-                   
+                let text = document.createTextNode($("#item_to_buy").val());
+
+                if(text.length > 0)
+                {
+                    let li = document.createElement("li");
+
+                    li.append(text);
+
                     if($("#important").is(':checked'))
                     {
-                       li.style['color'] = 'red';
+                        li.style['color'] = 'red';
                     }
-               
+
                     if($("#available_groceries").is(':checked'))
                     {
                         li.style['text-decoration'] = 'underline';
                     }
-                   
-                   $("#list").append(li);
+
+                    $("#list").append(li);
                     $("#item_to_buy").attr('placeholder', '');
                     $("#item_to_buy").val('');
-                   
-                   
-                   let max = ($('#list').children().length > 0) ? $('#list').children().length : '0';
+
+
+                    let max = ($('#list').children().length > 0) ? $('#list').children().length : '0';
                     $("#max_to_remove").text (max);
                     $("#removeField").attr('max', max);
-                                       
-                   console.log("element added");
-               }
-               else
-               {
-                   $('#item_to_buy').val('').attr('placeholder', 'Empty Field !');
-                   
-                    console.log('empty field');
-                    
-               }
-           });
-            
+
+//                    console.log("element added");
+                }
+                else
+                {
+                    $('#item_to_buy').val('').attr('placeholder', 'Empty Field !');
+
+//                    console.log('empty field');
+
+                }
+            });
+
             $("#remove_button").click(function() {
-               
+
                 let index = parseInt($('#removeField').val()) - 1;
-            
+
                 if(index > $('#list').children().length - 1)
                 {
-                   alert('Too hight number');
+                    alert('Too hight number');
                 }
                 else if(index < 0)
                 {
@@ -112,14 +112,14 @@
                 }
                 else
                 {
-                    $("#list").children().eq(index).remove();
-                    
-                   let max = ($('#list').children().length > 0) ? $('#list').children().length : '0';
-                    $("#max_to_remove").text (max);
-                    
-                    console.log('elemet removed');
+                    $("#list").children().eq(index  ).remove();
+
+                    let max = ($('#list').children().length > 0) ? $('#list').children().length : '0';
+                    $("#max_to_remove").text(max);
+
+//                    console.log('elemet removed');
                 }
-                
+
             });
             
         });
