@@ -60,9 +60,9 @@
 
             $("#add_button").click(function() {
 
-                let text = document.createTextNode($("#item_to_buy").val());
+                let text = document.createTextNode($("#item_to_buy").val().trim());
 
-                if(text.length > 0)
+                if(text.length > 0 && text != '')
                 {
                     let li = document.createElement("li");
 
